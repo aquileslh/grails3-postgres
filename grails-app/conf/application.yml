@@ -76,7 +76,7 @@ environments:
     development:
         dataSource:
             dbCreate: update
-            url: jdbc:postgresql://localhost:5432/security
+            url: jdbc:postgresql://localhost:5432/tienda
     test:
         dataSource:
             dbCreate: update
