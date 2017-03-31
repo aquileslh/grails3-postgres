@@ -21,6 +21,7 @@ apply plugin:"org.grails.plugins.views-json"
 
 repositories {
     mavenLocal()
+    jcenter()
     maven { url "https://repo.grails.org/grails/core" }
 }
 
@@ -52,6 +53,8 @@ dependencies {
     compile "org.hibernate:hibernate-core:5.1.1.Final"
     compile "org.hibernate:hibernate-ehcache:5.1.1.Final"
     compile "org.grails:grails-plugin-gsp"
+    compile "org.grails.plugins:spring-security-rest:2.0.0.M2"
+    compile "org.postgresql:postgresql:9.4-1201-jdbc41"
     compile "org.grails.plugins:views-json"
     compile "org.grails.plugins:views-json-templates"
     console "org.grails:grails-console"
