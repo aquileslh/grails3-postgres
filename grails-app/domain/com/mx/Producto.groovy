@@ -4,7 +4,7 @@ class Producto {
 
 	String nombre
 	String descripcion
-	Integer cantidadd
+	Integer cantidad
 	BigDecimal precio
 
     static constraints = {
