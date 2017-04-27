@@ -2,23 +2,29 @@ package com.mx
 
 import static org.springframework.http.HttpStatus.*
 import grails.transaction.Transactional
-import grails.plugin.springsecurity.annotation.Secured
+import grails.converters.JSON
 import grails.rest.RestfulController
 
-@Secured(['ROLE_USER'])
+
 @Transactional(readOnly = true)
 class ProductoController {
 
-    static responseFormats = ['json', 'xml']
-    static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
-
     def index(Integer max) {
-        params.max = Math.min(max ?: 10, 100)
-        respond Producto.list(params), model:[productoCount: Producto.count()]
+        println "en controlador productos muestra"
+        def res = Producto.list()
+        println res
+        render res as JSON
     }
 
     def show(Producto producto) {
         respond producto
+    }
+
+    def muestra() {
+        println "en controlador productos muestra"
+        def res = Producto.list()
+        println res
+        render res as JSON
     }
 
     @Transactional

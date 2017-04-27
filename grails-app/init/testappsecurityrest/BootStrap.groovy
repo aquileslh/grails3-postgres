@@ -5,7 +5,7 @@ import com.mx.*
 class BootStrap {
 
     def init = { servletContext ->
-    	def prod = new Producto(
+    	/*def prod = new Producto(
     		nombre: 'Xbox One S',
     		descripcion : 'Obtén por adelantado el paquete Xbox One S y Fifa 17 de 1 TB. Experimenta una acción real y auténtica con el Fifa 17',
     		cantidad : 12,
@@ -37,7 +37,7 @@ class BootStrap {
 			Role user1 = new Role("ROLE_USER").save()
 			Usuario nombre = new Usuario("user", "user").save()
 			UsuarioRole.create(nombre, user1, true)
-
+*/
     }
     def destroy = {
     }

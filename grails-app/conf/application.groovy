@@ -18,6 +18,7 @@ grails.plugin.springsecurity.controllerAnnotations.staticRules = [
 ]
 
 grails.plugin.springsecurity.filterChain.chainMap = [
+  [pattern: '/api/productos/**', 		 filters: 'none'],
 	[
     pattern: '/api/**',
     filters: 'JOINED_FILTERS,-anonymousAuthenticationFilter,-exceptionTranslationFilter,-authenticationProcessingFilter,-securityContextPersistenceFilter,-rememberMeAuthenticationFilter'
