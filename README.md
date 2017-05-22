@@ -1,11 +1,11 @@
 # grails3-postgres-angular2
 Desarrollo de ejemplo con grails 3 y postgres 9.4
 ## Tabla de contenido
-  1. [Creación de proyecto](#crear-proyecto)
-  2. [Configuración de base de datos](#Configuración-de-base-de-datos)
-  3. [Creación de tablas para usuarios y roles con s2-quickstart](#Creación-de-tablas-para-usuarios-y-roles-con-s2-quickstart)
+  1. [Creación de proyecto](#creación-de-proyecto)
+  2. [Configuración de base de datos](#configuración-de-base-de-datos)
+  3. [Creación de tablas para usuarios y roles con s2-quickstart](#creación-de-tablas-para-usuarios-y-roles-con-s2-quickstart)
 
-##Creación de proyecto
+## Creación de proyecto
 Se crea el proyecto grails rest y se agregan las dependencias en build.gradle
 ```bash
 $ grails create-app myapp --profile=rest-api
@@ -25,7 +25,7 @@ dependencies {
     ....
 }
 ```
-##Configuración de base de datos
+## Configuración de base de datos
 ```bash
 hibernate:
      cache:
@@ -53,7 +53,7 @@ hibernate:
               ......
               ......
 ```
-##Creación de tablas para usuarios y roles con s2-quickstart
+## Creación de tablas para usuarios y roles con s2-quickstart
 ```bash
 grails s2-quickstart org.example Usuario Role
 ```
