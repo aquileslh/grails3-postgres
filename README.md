@@ -3,6 +3,8 @@ Desarrollo de ejemplo con grails 3 y postgres 9.4
 ## Tabla de contenido
   1. [Creación de proyecto](#crear-proyecto)
   2. [Configuración de base de datos](#Configuración-de-base-de-datos)
+  3. [Creación de tablas para usuarios y roles con s2-quickstart](#Creación-de-tablas-para-usuarios-y-roles-con-s2-quickstart)
+
 ##Creación de proyecto
 Se crea el proyecto grails rest y se agregan las dependencias en build.gradle
 ```bash
@@ -50,5 +52,24 @@ hibernate:
               url: jdbc:h2:mem:testDb;MVCC=TRUE;LOCK_TIMEOUT=10000;DB_CLOSE_ON_EXIT=FALSE
               ......
               ......
+```
+##Creación de tablas para usuarios y roles con s2-quickstart
+```bash
+grails s2-quickstart org.example Usuario Role
+```
+Esto crea las tablas en la base de datos, donde se almacenan los usuarios y roles. Insertamos usuarios en la base de datos desde el archivo BootStrap.groovy
+```bash
+def init = { servletContext ->
+      Role admin = new Role("ROLE_ADMIN").save()
+			Usuario user = new Usuario("admin", "admin").save()
+			UsuarioRole.create(user, admin, true)
+
+			Role user1 = new Role("ROLE_USER").save()
+			Usuario usuario1 = new Usuario("user", "user").save()
+			UsuarioRole.create(usuario1, user1, true)
+}
+```
+
+```bash
 ```
 ###Uso de cherry-pick
