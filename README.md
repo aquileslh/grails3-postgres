@@ -4,7 +4,7 @@ Desarrollo de ejemplo con grails 3 y postgres 9.4
   1. [Creación de proyecto](#creación-de-proyecto)
   2. [Configuración de base de datos](#configuración-de-base-de-datos)
   3. [Creación de tablas para usuarios y roles con s2-quickstart](#creación-de-tablas-para-usuarios-y-roles-con-s2-quickstart)
-  4. [Configuracion basica de filtros en application.groovy](#Configuracion-basica-de-filtros-en-application-groovy)
+  4. [Configuracion basica de filtros en application groovy](#Configuracion-basica-de-filtros-en-application-groovy)
 
 ## Creación de proyecto
 Se crea el proyecto grails rest y se agregan las dependencias en build.gradle
