@@ -6,7 +6,7 @@ Desarrollo de ejemplo con grails 3 y postgres 9.4
   3. [Creación de tablas para usuarios y roles con s2-quickstart](#creación-de-tablas-para-usuarios-y-roles-con-s2-quickstart)
   4. [Configuracion basica de filtros en application groovy](#configuracion-basica-de-filtros-en-application-groovy)
   5. [Integración de angular2](#integración-de-angular2)
-  6. [Peticion Get inicial](#peticion-Get-inicial)
+  6. [Peticion Get inicial](#peticion-get-inicial)
 
 ## Creación de proyecto
 Versiones:
@@ -160,8 +160,11 @@ $ npm start
 
 ## Peticion Get inicial
 La petición get se realiza desde un componente angular.
+
 [app.module.ts](https://github.com/aquileslh/grails3-postgres/blob/master/frontend/src/app/app.module.ts) Import necesarios para el funcionamiento.
+
 [app.component.ts](https://github.com/aquileslh/grails3-postgres/blob/master/frontend/src/app/app.component.ts) Import y petición get a servicio rest de grails.
+
 **[⬆ Ir al inicio](#tabla-de-contenido)**
 
 ```bash
