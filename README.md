@@ -76,7 +76,7 @@ def init = { servletContext ->
 ```
 **[⬆ Ir al inicio](#tabla-de-contenido)**
 
-## Configuracion basica de filtros en application.groovy 
+## Configuracion basica de filtros en application groovy 
 ```bash
 grails.plugin.springsecurity.filterChain.chainMap = [
 	[
