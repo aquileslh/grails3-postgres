@@ -109,7 +109,7 @@ def newUser(){
 }
 ```
 Modificación de archivo UrlMappings.groovy para aplicación de filtros
-**Los dominios y controladores fueron creados de forma normal**
+**Los dominios (tienda, departamento, producto) y controladores (tiendas, departamentos, productos ) fueron creados de forma normal, y se insertaron datos en las tablas**
 ```bash
 class UrlMappings {
      static mappings = {
