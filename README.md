@@ -5,6 +5,8 @@ Desarrollo de ejemplo con grails 3 y postgres 9.4
   2. [Configuración de base de datos](#configuración-de-base-de-datos)
   3. [Creación de tablas para usuarios y roles con s2-quickstart](#creación-de-tablas-para-usuarios-y-roles-con-s2-quickstart)
   4. [Configuracion basica de filtros en application groovy](#configuracion-basica-de-filtros-en-application-groovy)
+  5. [Integración de angular2](#integración-de-angular2)
+  6. [Peticion Get inicial](#peticion-Get-inicial)
 
 ## Creación de proyecto
 Versiones:
@@ -128,6 +130,38 @@ class UrlMappings {
 	}
 }
 ```
+**[⬆ Ir al inicio](#tabla-de-contenido)**
+
+## Integración de angular2
+Creación de proxy para eliminar problemas de CORS. creamos el archivo proxy.config.json con el siguiente contenido.
+```bash
+{
+  "/api/*":{
+	"target":"http://localhost:8080",
+	"secure":false,
+	"logLevel":"debug"
+  }
+}
+
+Modificar el archivo package.json en la linea "start":
+......
+"scripts": {
+    "ng": "ng",
+    "start": "ng serve --proxy-config proxy.config.json",  
+    "lint": "tslint \"src/**/*.ts\" --project src/tsconfig.json --type-check && tslint \"e2e/**/*.ts\" --project e2e/tsconfig.json --type-check",
+    "test": "ng test",
+    .....
+```
+El servidor angular se puede iniciar con
+```bash
+$ npm start
+```
+**[⬆ Ir al inicio](#tabla-de-contenido)**
+
+## Peticion Get inicial
+La petición get se realiza desde un componente angular.
+[app.module.ts](https://github.com/aquileslh/grails3-postgres/blob/master/frontend/src/app/app.module.ts) Import necesarios para el funcionamiento.
+[app.component.ts](https://github.com/aquileslh/grails3-postgres/blob/master/frontend/src/app/app.component.ts) Import y petición get a servicio rest de grails.
 **[⬆ Ir al inicio](#tabla-de-contenido)**
 
 ```bash
