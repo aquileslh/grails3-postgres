@@ -79,6 +79,7 @@ def init = { servletContext ->
 ## Configuracion basica de filtros en application groovy 
 ```bash
 grails.plugin.springsecurity.filterChain.chainMap = [
+	[pattern: '/api/productos/**', 		 filters: 'none'], // Los filtros se aplican a las urls de forma decendente, ha esta url no se le aplica ningun filtro
 	[
     	pattern: '/api/**',
     	filters: 'JOINED_FILTERS,-anonymousAuthenticationFilter,-exceptionTranslationFilter,-authenticationProcessingFilter,-securityContextPersistenceFilter,-rememberMeAuthenticationFilter'
