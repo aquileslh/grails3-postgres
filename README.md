@@ -10,7 +10,7 @@ Se crea el proyecto grails rest y se agregan las dependencias en build.gradle
 ```bash
 $ grails create-app myapp --profile=rest-api
 
-build.gradle
+Agregar en build.gradle
 
 repositories {
      mavenLocal()
@@ -59,9 +59,9 @@ hibernate:
 
 ## Creación de tablas para usuarios y roles con s2-quickstart
 ```bash
-grails s2-quickstart org.example Usuario Role
+$ grails s2-quickstart org.example Usuario Role
 ```
-Esto crea las tablas en la base de datos, donde se almacenan los usuarios y roles. Insertamos usuarios en la base de datos desde el archivo BootStrap.groovy
+Esto crea las tablas en la base de datos, donde se almacenan los usuarios y roles, tambien se crea el archivo [application.groovy](http://alvarosanchez.github.io/grails-spring-security-rest/latest/docs/#_plugin_configuration) con los filtros configurables para las urls de la aplicacion. Insertamos usuarios en la base de datos desde el archivo BootStrap.groovy
 ```bash
 def init = { servletContext ->
       Role admin = new Role("ROLE_ADMIN").save()
@@ -75,6 +75,51 @@ def init = { servletContext ->
 ```
 **[⬆ Ir al inicio](#tabla-de-contenido)**
 
+## Configuracion basica de filtros en application.groovy 
+```bash
+grails.plugin.springsecurity.filterChain.chainMap = [
+	[
+    	pattern: '/api/**',
+    	filters: 'JOINED_FILTERS,-anonymousAuthenticationFilter,-exceptionTranslationFilter,-authenticationProcessingFilter,-securityContextPersistenceFilter,-rememberMeAuthenticationFilter'
+  	],
+ 	[pattern: '/assets/**',      filters: 'none'],
+ 	......
+	]
+```
+La configuración espesifica a todas las urls que inicien con /api/.... aplica todos los filtros menos los indicados.
+Para el uso de permisos en los controladores se necesitan los siguinetes import y la anotacion en las clases o metodos segun el caso.
+```bash
+ import grails.plugin.springsecurity.annotation.Secured
+ import grails.rest.RestfulController
+ 
+ @Secured(['ROLE_ADMIN'])
+ @Transactional(readOnly = true)
+ class DepartamentoController {
+ ......
+ .....
+ }
+ 
+@Secured(['ROLE_USER'])
+@Transactional(readOnly = true)
+def newUser(){
+   ...
+   ...
+}
+```
+Modificación de archivo UrlMappings.groovy para aplicación de filtros
+**Los dominios y controladores fueron creados de forma normal**
+```bash
+class UrlMappings {
+     static mappings = {
+	"/api/tiendas"(resources : 'tienda')
+        "/api/departamentos"(resources : 'departamento')
+        "/api/productos"(resources : 'producto')
+ 
+         "/"(controller: 'application', action:'index')
+         "500"(view: '/error')
+	}
+}
+```
+
 ```bash
 ```
-###Uso de cherry-pick
