@@ -1,12 +1,12 @@
 # grails3-postgres-angular2
 Desarrollo de ejemplo con grails 3 y postgres 9.4
 ## Tabla de contenido
-  1. [Creación de proyecto](#creación-de-proyecto)
-  2. [Configuración de base de datos](#configuración-de-base-de-datos)
-  3. [Creación de tablas para usuarios y roles con s2-quickstart](#creación-de-tablas-para-usuarios-y-roles-con-s2-quickstart)
-  4. [Configuracion basica de filtros en application groovy](#configuracion-basica-de-filtros-en-application-groovy)
-  5. [Integración de angular2](#integración-de-angular2)
-  6. [Peticion Get inicial](#peticion-get-inicial)
+  1. [Creación de proyecto](#1-creación-de-proyecto)
+  2. [Configuración de base de datos](#2-configuración-de-base-de-datos)
+  3. [Creación de tablas para usuarios y roles con s2-quickstart](#3-creación-de-tablas-para-usuarios-y-roles-con-s2-quickstart)
+  4. [Configuracion basica de filtros en application groovy](#4-configuracion-basica-de-filtros-en-application-groovy)
+  5. [Integración de angular2](#5-integración-de-angular2)
+  6. [Peticion Get inicial](#6-peticion-get-inicial)
 
 ## 1 Creación de proyecto
 Versiones:
