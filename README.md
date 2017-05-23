@@ -8,7 +8,7 @@ Desarrollo de ejemplo con grails 3 y postgres 9.4
   5. [Integración de angular2](#integración-de-angular2)
   6. [Peticion Get inicial](#peticion-get-inicial)
 
-## Creación de proyecto
+## 1 Creación de proyecto
 Versiones:
  Grails Version: 3.2.1
  Groovy Version: 2.4.7
@@ -36,7 +36,7 @@ dependencies {
 ```
 **[⬆ Ir al inicio](#tabla-de-contenido)**
 
-## Configuración de base de datos
+## 2 Configuración de base de datos
 ```bash
 hibernate:
      cache:
@@ -66,7 +66,7 @@ hibernate:
 ```
 **[⬆ Ir al inicio](#tabla-de-contenido)**
 
-## Creación de tablas para usuarios y roles con s2-quickstart
+## 3 Creación de tablas para usuarios y roles con s2-quickstart
 ```bash
 $ grails s2-quickstart org.example Usuario Role
 ```
@@ -84,7 +84,7 @@ def init = { servletContext ->
 ```
 **[⬆ Ir al inicio](#tabla-de-contenido)**
 
-## Configuracion basica de filtros en application groovy
+## 4 Configuracion basica de filtros en application groovy
 ```bash
 grails.plugin.springsecurity.filterChain.chainMap = [
 	[pattern: '/api/productos/**', 		 filters: 'none'], // Los filtros se aplican a las urls de forma decendente, ha esta url no se le aplica ningun filtro
@@ -132,7 +132,7 @@ class UrlMappings {
 ```
 **[⬆ Ir al inicio](#tabla-de-contenido)**
 
-## Integración de angular2
+## 5 Integración de angular2
 Creación de proxy para eliminar problemas de CORS. creamos el archivo proxy.config.json con el siguiente contenido.
 ```bash
 {
@@ -158,7 +158,7 @@ $ npm start
 ```
 **[⬆ Ir al inicio](#tabla-de-contenido)**
 
-## Peticion Get inicial
+## 6 Peticion Get inicial
 La petición get se realiza desde un componente angular.
 
 [app.module.ts](https://github.com/aquileslh/grails3-postgres/blob/master/frontend/src/app/app.module.ts) Import necesarios para el funcionamiento.
